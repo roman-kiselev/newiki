@@ -22,12 +22,20 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
 
-        "baseUrl": "./src",
+        "baseUrl": ".",
         "paths": {
-            "@app/*": ["app/*"],
-            "@store/*": ["app/store/*"],
-            "@api/*": ["shared/api/*"],
-            "@hooks/*": ["shared/hooks/*"]
+            "@/*": ["./src/*"],
+            "@app/*": ["./src/app/*"],
+            "@entities/*": ["./src/entities/*"],
+            "@features/*": ["./src/features/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@api/*": ["./src/shared/api/*"],
+            "@hooks/*": ["./src/shared/hooks/*"],
+            "@models/*": ["./src/shared/models/*"],
+            "@interfaces/*": ["./src/shared/interfaces/*"],
+            "@ui/*": ["./src/shared/ui/*"],
+            "@utils/*": ["./src/shared/utils/*"],
+            "@config/*": ["./src/shared/config/*"]
         }
     },
     "include": ["src"]

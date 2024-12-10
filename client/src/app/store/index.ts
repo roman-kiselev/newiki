@@ -1,17 +1,19 @@
-import { mainApi } from "@api/main";
-import { configureStore, createListenerMiddleware } from "@reduxjs/toolkit";
+import { mainApi } from "@/shared/api";
+import { authReducer } from "@/shared/models";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-const listenerMiddleware = createListenerMiddleware;
+// const listenerMiddleware = createListenerMiddleware;
 
-const rootReducer = {
+const rootReducer = combineReducers({
+    auth: authReducer,
     [mainApi.reducerPath]: mainApi.reducer,
-};
+});
 
 const store = configureStore({
     reducer: rootReducer,
-    middleware(getDefaultMiddleware) {
-        return getDefaultMiddleware({}).concat(mainApi.middleware);
-    },
+    // middleware(getDefaultMiddleware) {
+    //     return getDefaultMiddleware().concat().prepend();
+    // },
 });
 
 export type AppDispatch = typeof store.dispatch;
