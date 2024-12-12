@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, "src");
 export default defineConfig({
     resolve: {
         alias: {
-            "@": resolve(root),
+            "@": path.resolve(__dirname, "./src"),
             "@app": resolve(root, "app"),
             "@entities": resolve(root, "entities"),
             "@features": resolve(root, "features"),
@@ -17,8 +17,10 @@ export default defineConfig({
             "@models": resolve(root, "shared/models"),
             "@interfaces": resolve(root, "shared/interfaces"),
             "@ui": resolve(root, "shared/ui"),
+            "@lib": resolve(root, "shared/lib"),
             "@utils": resolve(root, "shared/utils"),
             "@config": resolve(root, "shared/config"),
+            "@styles": resolve(root, "shared/styles"),
         },
     },
     plugins: [react()],
