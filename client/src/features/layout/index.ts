@@ -1,1 +1,3 @@
-export { default as LayoutComponent } from "./LayoutComponent";
+import LayoutComponent from "./LayoutComponent";
+
+export { LayoutComponent };

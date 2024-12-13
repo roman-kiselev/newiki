@@ -1,12 +1,15 @@
+import { useAppSelector } from "@/shared/hooks";
 import { VerticalMenu } from "@/shared/ui";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const LayoutComponent = () => {
+    const { isAuth } = useAppSelector((store) => store.auth);
+    const navigation = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleMenu = () => {
@@ -14,6 +17,11 @@ const LayoutComponent = () => {
     };
     const width = window.innerWidth;
 
+    useEffect(() => {
+        if (!isAuth) {
+            navigation("/auth");
+        }
+    }, [isAuth, navigation]);
     // const items: MenuProps["items"] = [
     //     {
     //         type: "divider",

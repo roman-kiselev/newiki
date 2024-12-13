@@ -1,6 +1,7 @@
+import { LayoutComponent } from "@/features/layout";
 import { configLeftMenu } from "@/shared/config";
-import { LayoutComponent } from "@features/layout";
 import { Route, Routes } from "react-router-dom";
+import Login from "./auth/Login";
 import { CreateArticle } from "./createArticle";
 
 const Routing = () => {
@@ -16,6 +17,7 @@ const Routing = () => {
                     element={<CreateArticle />}
                 />
             </Route>
+            <Route path="/auth" element={<Login />} />
         </Routes>
     );
 };

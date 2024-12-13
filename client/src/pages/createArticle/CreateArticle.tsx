@@ -8,7 +8,6 @@ const CreateArticle = () => {
             <SettingsProvider>
                 <PlateEditor />
             </SettingsProvider>
-
             <Toaster />
         </div>
     );

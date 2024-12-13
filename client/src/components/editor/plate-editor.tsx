@@ -2,7 +2,6 @@ import { Plate } from "@udecode/plate-common/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Editor, EditorContainer } from "../plate-ui/editor";
-import { SettingsDialog } from "./settings";
 import { useCreateEditor } from "./use-create-editor";
 
 // import {
@@ -149,7 +148,7 @@ export function PlateEditor() {
                     <Editor variant={"default"} />
                 </EditorContainer>
 
-                <SettingsDialog />
+                {/* <SettingsDialog /> */}
             </Plate>
         </DndProvider>
     );
